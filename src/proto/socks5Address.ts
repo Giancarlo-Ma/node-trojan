@@ -23,8 +23,6 @@ export class SOCKS5Address {
     }
 
     this.addressType = data[0];
-    console.log(this.addressType, 'addresstype');
-    console.log(data.subarray(2).toString());
     switch (this.addressType) {
       case AddressType.IPV4: {
         if (data.length > 4 + 2) {

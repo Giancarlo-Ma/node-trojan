@@ -131,15 +131,12 @@ export class ClientSession extends Session {
           },
           () => {
             console.log('secure connected');
-            // if (this.isUDP) {
-            // } else {
-            //   this.status = ClientSessionStatus.FORWARD;
-            // }
-            // this.outRead();
-            this.outSocket.write(this.outWriteBuf, () => {
-              this.socket.pipe(this.outSocket);
-              this.outSocket.pipe(this.socket);
-            });
+            if (this.isUDP) {
+            } else {
+              this.status = ClientSessionStatus.FORWARD;
+            }
+            this.outRead();
+            this.outWrite(this.outWriteBuf);
           },
         );
         // this.outSocket.on('data', async (data) => await this.outRead(data));

@@ -14,9 +14,7 @@ export class TrojanRequest {
     const first = data.indexOf('\r\n');
     if (first === -1) return -1;
     this.password = data.subarray(0, first).toString();
-    console.log(this.password, 'password');
     this.payload = data.subarray(first + 2);
-    console.log('payload', this.payload);
     if (
       this.payload.length === 0 ||
       (Number(this.payload[0]) !== Command.CONNECT &&

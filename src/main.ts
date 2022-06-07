@@ -23,3 +23,29 @@ const config = new Config();
     service.run();
   } while (restart);
 })();
+
+// import { connect } from 'tls';
+
+// const socket = connect(
+//   {
+//     host: 'www.hangshu.ml',
+//     port: 1080,
+//     rejectUnauthorized: false,
+//     checkServerIdentity: () => {
+//       return null;
+//     },
+//   },
+//   () => {
+//     if (socket.authorized) {
+//       console.log('Connection authorized by a Certificate Authority.');
+//     } else {
+//       console.log('Connection not authorized: ' + socket.authorizationError);
+//     }
+//     process.stdin.pipe(socket);
+//     process.stdin.resume();
+//   },
+// );
+
+// socket.on('data', (data) => {
+//   console.log(data.toString());
+// });
